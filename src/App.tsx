@@ -1,29 +1,20 @@
-
-import './App.css';
- import CharacterCounter from './components/CharacterCounter';
-import StatsDisplay from './components/StatsDisplay';
+import { useState } from "react";
+import "./App.css";
+import CharacterCounter from "./components/CharacterCounter";
+import StatsDisplay from "./components/StatsDisplay";
 //import StatsDisplay from './components/StatsDisplay';
-import TextInput from './components/TextInput';
+import TextInput from "./components/TextInput";
 
+function App() {
+  const [text, setText] = useState("");
 
-
-function App(){
-
+ 
   return (
-    <div className="bg-color">
+    <div>
+     <StatsDisplay showReadingTime={false}/>
     
-
-      
-      {/* <TextInput 
-
-      onTextChange={(e) => console.log('TextChanged')
-      }/> */}
-
-      {/* <CharacterCounter/> */}
-        <StatsDisplay/> 
-      
     </div>
-  )
+  );
 }
 
 export default App;

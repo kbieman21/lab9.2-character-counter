@@ -1,4 +1,5 @@
-//import { useState } from "react";
+import { useState } from "react";
+import CharacterCounter from "./CharacterCounter";
 
 export interface TextInputProps {
   onTextChange: (text: string) => void;
@@ -11,18 +12,30 @@ function TextInput({
   placeholder = "",
   initialValue = "",
 }: TextInputProps) {
-  //const [text, setText] = useState(initialValue);
+  const [text, setText] = useState(initialValue);
+
+  const wordCount = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+  const averWordReadingPerMin = 150;
+  const readingTimeInMin = wordCount / averWordReadingPerMin;
+
 
   return (
-    <div className="w-full">
-      <h1>Text Input</h1>
+    <div >
+      <CharacterCounter />
+      <div className="w-full border max-w-3xl bg-white p-6 rounded-lg shadow-md">      
       <textarea
-        className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+       className=""
         placeholder={placeholder}
         defaultValue={initialValue}
-        onChange={(e) => onTextChange(e.target.value)}
+        onChange={(e) => {
+          setText(e.target.value);
+          onTextChange(e.target.value);
+        }}
         rows={6}
       ></textarea>
+      </div>
+
+     
     </div>
   );
 }
