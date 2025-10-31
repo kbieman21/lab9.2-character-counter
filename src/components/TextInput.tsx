@@ -22,9 +22,9 @@ function TextInput({
   return (
     <div >
       <CharacterCounter />
-      <div className="w-full border max-w-3xl bg-white p-6 rounded-lg shadow-md">      
+          
       <textarea
-       className=""
+       className="w-full border max-w-3xl bg-white p-6 rounded-lg shadow-md"
         placeholder={placeholder}
         defaultValue={initialValue}
         onChange={(e) => {
@@ -33,7 +33,7 @@ function TextInput({
         }}
         rows={6}
       ></textarea>
-      </div>
+     
 
      
     </div>
