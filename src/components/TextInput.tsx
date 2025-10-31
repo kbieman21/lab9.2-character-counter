@@ -24,7 +24,7 @@ function TextInput({
       <CharacterCounter />
           
       <textarea
-       className="w-full border max-w-3xl bg-white p-6 rounded-lg shadow-md"
+       className="w-full border max-w-3xl text-xl bg-white p-6 rounded-lg shadow-md mb-5"
         placeholder={placeholder}
         defaultValue={initialValue}
         onChange={(e) => {

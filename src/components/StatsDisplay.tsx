@@ -35,11 +35,11 @@ function StatsDisplay({ stats, showReadingTime }: StatsDisplayProps) {
     //alert('Words are too short or too long')
   }
   return (
-    <div className="w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
+    <div className="w-full max-w-3xl bg-white p-6 rounded-lg">
       <div>
         <TextInput
           onTextChange={handleTextChange}
-          placeholder="Start typing here"
+          placeholder="Start typing your content here"
         />
       </div>
 
